@@ -43,7 +43,7 @@ model Usuario {
   gmail               String
   password            String
   estatus             String
-  estado              Boolean?    @default(true)
+  estado              Boolean    @default(true)
   fecha_subido        DateTime   @default(now())
   fecha_actualizado   DateTime   @updatedAt
   favoritos           Favorito[] 

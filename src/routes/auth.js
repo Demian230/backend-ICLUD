@@ -28,8 +28,7 @@ router.post("/login", async (req, res) => {
             return res.status(401).json({ error: "Credenciales inválidas" });
         }
 
-        const exento = ["admin", "hotelero"].includes(usuario.estatus);
-        if (!exento && usuario.estado === false) {
+        if (!usuario.estado) {
             return res.status(403).json({ error: "Tu cuenta está bloqueada" });
         }
 
